@@ -1,0 +1,60 @@
+# lumin-actool 配置示例
+# 复制此文件为 config.yaml 并根据实际情况修改
+
+# 邮箱生产配置
+email:
+  providers:
+    outlook:
+      proxy: ""                         # 注册代理（如 socks5://127.0.0.1:1080）
+      name_prefix: "lumin"
+      domain: "outlook.com"
+    tempmail:
+      api_url: "https://api.tempmail.lol"
+      ttl: 3600                         # 临时邮箱存活时间（秒）
+
+# 供应商注册配置
+provider:
+  registrars:
+    kiro:
+      auth_method: "social-google"      # google | github
+      headless: true
+      timeout: "5m"
+      proxy: ""
+    claude:
+      auth_method: "oauth-pkce"
+      headless: true
+      timeout: "3m"
+    copilot:
+      auth_method: "device-code"
+      headless: true
+      timeout: "5m"
+    gemini:
+      auth_method: "google-oauth"
+      project_id: ""                    # 留空则自动发现
+      headless: true
+    codex:
+      auth_method: "oauth-pkce"
+      headless: true
+      timeout: "3m"
+
+# 浏览器自动化配置
+browser:
+  binary_path: ""                       # Chrome 路径，留空自动检测
+  headless: true
+  user_data_base: "./browser_profiles"  # 浏览器 profile 隔离目录
+
+# 流水线配置
+pipeline:
+  concurrency: 3                        # 默认并发数
+  retry_count: 2                        # 默认重试次数
+  callback_port: 19800                  # OAuth 回调服务器端口
+
+# 存储配置
+storage:
+  type: "sqlite"
+  path: "./actool.db"
+
+# 导出配置
+export:
+  output_dir: "./output"
+  format: "json"                        # json | zip
