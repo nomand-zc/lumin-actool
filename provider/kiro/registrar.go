@@ -1,5 +1,4 @@
 // Package kiro 实现了 Kiro 供应商的 OAuth 授权注册器。
-// 参考 CLIProxyAPIPlus/internal/auth/kiro/social_auth.go 的完整 Social OAuth 流程。
 //
 // Kiro 使用 AWS Cognito 作为身份认证服务，支持以下 Social Login 提供商：
 //   - Google

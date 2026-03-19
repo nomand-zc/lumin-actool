@@ -1,5 +1,4 @@
 // Package gemini 实现了 GeminiCLI 供应商的 OAuth 授权注册器。
-// 参考 CLIProxyAPIPlus/internal/auth/gemini/gemini_auth.go 的 Google OAuth2 流程。
 //
 // GeminiCLI 使用 Google OAuth2 作为身份认证，通过以下流程获取凭证：
 //  1. 构造 Google OAuth2 授权 URL（含 ClientID、Scopes、redirect_uri）
